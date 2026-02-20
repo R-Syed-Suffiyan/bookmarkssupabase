@@ -12,13 +12,18 @@ export default function Home() {
       provider: "google",
     });
   };
-
   useEffect(() => {
-    supabase.auth.getSession().then(({ data }) => {
-      if (data.session) {
-        window.location.href = "/dashboard";
+    const { data: listener } = supabase.auth.onAuthStateChange(
+      (event, session) => {
+        if (session) {
+          window.location.href = "/dashboard";
+        }
       }
-    });
+    );
+
+    return () => {
+      listener.subscription.unsubscribe();
+    };
   }, []);
 
   return (
