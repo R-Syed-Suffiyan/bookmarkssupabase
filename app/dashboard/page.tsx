@@ -108,9 +108,31 @@ export default function Dashboard() {
             toast.success("Bookmark deleted successfully 🗑");
         }
     };
+    const handleLogout = async () => {
+        const { error } = await supabase.auth.signOut();
+
+        if (error) {
+            toast.error("Logout failed");
+        } else {
+            toast.success("Logged out successfully 👋");
+            window.location.href = "/";
+        }
+    };
     return (
         <div className="min-h-screen bg-black text-white flex justify-center py-12 px-4 font-['Poppins'] font-normal">
-            <div className="w-full max-w-2xl space-y-8">
+            <div className="w-full max-w-2xl space-y-8 relative">
+
+                {/* Logout Button */}
+                <div className="flex justify-end">
+                    <button
+                        onClick={handleLogout}
+                        className="bg-zinc-800 hover:bg-red-600 
+            transition px-4 py-2 rounded-lg 
+            text-sm font-medium border border-zinc-700"
+                    >
+                        Logout
+                    </button>
+                </div>
 
                 <h1 className="text-3xl font-bold tracking-tight text-center text-purple-400">
                     My Bookmarks
