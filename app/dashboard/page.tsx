@@ -154,7 +154,7 @@ export default function Dashboard() {
                         <button
                             onClick={addBookmark}
                             disabled={!title.trim() || !url.trim()}
-                            className="flex items-center justify-center gap-2
+                            className="flex items-center justify-center cursor-pointer gap-2
              bg-gradient-to-r from-purple-600 to-indigo-600 
              disabled:opacity-50 disabled:cursor-not-allowed
              hover:opacity-90 transition px-6 py-3 rounded-lg font-medium"
@@ -200,7 +200,7 @@ export default function Dashboard() {
                             </div>
                             <button
                                 onClick={() => deleteBookmark(b.id)}
-                                className="flex items-center gap-1 
+                                className="flex items-center gap-1 cursor-pointer
              text-red-400 hover:text-red-300 
              transition text-sm font-medium"
                             >
