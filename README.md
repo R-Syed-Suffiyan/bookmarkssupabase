@@ -20,7 +20,7 @@ https://bookmarkssupabase.vercel.app/
 # Getting Started
 
 1. Clone the repo:
-  git clone https://github.com/R-Syed-Suffiyan/Bookmarks---Supabase.git
+  git clone https://github.com/R-Syed-Suffiyan/bookmarkssupabase.git
   cd bookmark-app
 
 2. Install Dependencies:
